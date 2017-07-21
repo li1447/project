@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			body {
+				overflow: hidden;
+			}
+			
+			#lunbo {
+				position: relative;
+				width: 100%;
+				height: 800px;
+				/*margin-left: -4px;*/
+				margin-top: 0px;
+			}
+			
+			#lunbo ul.list {
+				width: 1600px;
+				height: 100%;
+			}
+			
+			#lunbo ul.list li {
+				float: left;
+				position: relative;
+				width: 1800px;
+				height: 100%;
+				border-left: 1px solid #888;
+				overflow: hidden;
+			}
+			
+			#lunbo ul.list li:nth-child(1) {
+				border-left: none;
+			}
+			
+			#lunbo ul.list li.on {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#lunbo ul.list li>img {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			
+			#lunbo ul.list li>div {
+				position: relative;
+				width: 80px;
+				height: 100%;
+				z-index: 9;
+				background-color: rgba(0, 0, 0, .3);
+			}
+			
+			#lunbo ul.list li>div>p {
+				position: absolute;
+				width: 40px;
+				height: 350px;
+				left: 20px;
+				top: 39px;
+				font-size: 26px;
+				color: #fff;
+				text-align: center;
+				line-height: 35px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="content">
+			<div id="lunbo">
+				<ul class="list">
+					<li>
+						<div>
+							<p>龙猫</p>
+						</div>
+						<img src="img/lomgmao.jpg" />
+					</li>
+					<li>
+						<div>
+							<p>天空之城</p>
+						</div>
+						<img src="img/tiankong.jpg" />
+					</li>
+					<li class="on">
+						<div>
+							<p>哈尔的移动城堡</p>
+						</div>
+						<img src="img/haer.jpg" />
+					</li>
+					<li>
+						<div>
+							<p>幽灵公主</p>
+						</div>
+						<img src="img/youling.jpg" />
+					</li>
+					<li>
+						<div>
+							<p>魔女宅急便</p>
+						</div>
+						<img src="img/monv.jpg" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+	<script type="text/javascript">
+		(function() {
+			$listDiv = $('#lunbo ul.list li>div');
+			$listLi = $('#lunbo ul.list li');
+			$listDiv.hover(function() {
+				$(this).parent().stop(true).animate({
+					width: 1276
+				}, 200).siblings('li').stop(true).animate({
+					width: 80
+				}, 200);
+			});
+		})();
+	</script>
+
+</html>
